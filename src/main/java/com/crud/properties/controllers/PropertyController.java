@@ -3,22 +3,16 @@ package com.crud.properties.controllers;
 
 import com.crud.properties.dtos.PropertyDTO;
 import com.crud.properties.entities.Property;
+import com.crud.properties.exceptions.NotFoundException;
 import com.crud.properties.repositories.PropertyRepository;
 import com.crud.properties.services.PropertyServices;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.webjars.NotFoundException;
 
-import javax.validation.Valid;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -53,16 +47,14 @@ public class PropertyController {
     }
 
     @DeleteMapping("/{id}")
-    public Map<String, Boolean> deleteProperty(@PathVariable(value = "id") Long id)
-            throws NotFoundException {
-        Property property = repository.findById(id)
-                .orElseThrow(() -> new NotFoundException("Property not found for this id :: " + id));
+    public String deleteProperty(@PathVariable(value = "id") Long id) throws NotFoundException {
+        Property property = repository.findById(id).orElseThrow(() ->
+                new NotFoundException("Property not found"));
 
-        repository.delete(property);
-        Map<String, Boolean> response = new HashMap<>();
-        response.put("deleted", Boolean.TRUE);
-        return response;
+        if (repository.findById(id).isPresent()) {
+            repository.delete(property);
+            return "User with ID " + id + " was removed from our database.";
+        }
+        return "User with ID " + id + " was not found in our database.";
     }
-
-
 }
