@@ -16,7 +16,6 @@ import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConf
 				title = "Properties API",
 				version = "1.0.0",
 				description = "Application made for creating, listing, updating and deleting properties in a Postgres Database."))
-
 public class PropertiesApplication {
 
 	public static void main(String[] args) {
