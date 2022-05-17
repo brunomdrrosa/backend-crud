@@ -21,5 +21,9 @@ public class PropertyServices {
        return lista;
     }
 
+    public Property addProperty(Property newProperty){
+       return repository.saveAndFlush(newProperty);
+    }
+
 
 }
