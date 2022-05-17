@@ -13,9 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.webjars.NotFoundException;
 
 import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -26,6 +29,7 @@ public class PropertyController {
     @Autowired
     private PropertyServices service;
 
+    @Autowired
     private PropertyRepository repository;
 
     @GetMapping
@@ -47,4 +51,18 @@ public class PropertyController {
     public PropertyDTO updateProperty(@RequestBody PropertyDTO dto) {
         return service.updateProperty(dto);
     }
+
+    @DeleteMapping("/{id}")
+    public Map<String, Boolean> deleteProperty(@PathVariable(value = "id") Long id)
+            throws NotFoundException {
+        Property property = repository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Property not found for this id :: " + id));
+
+        repository.delete(property);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        return response;
+    }
+
+
 }

@@ -6,6 +6,7 @@ import com.crud.properties.repositories.PropertyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.webjars.NotFoundException;
 
 import java.util.List;
 
@@ -26,7 +27,6 @@ public class PropertyServices {
     }
 
     public PropertyDTO updateProperty(PropertyDTO propertyDTO) {
-
        Property property = new Property();
        property.setId(propertyDTO.getId());
        property.setTenant(propertyDTO.getTenant());
