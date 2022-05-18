@@ -5,19 +5,18 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
-import java.time.LocalDate;
 import java.util.Date;
 
 
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "db_properties")
+
 public class Property {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,5 +36,4 @@ public class Property {
     @Schema(description = "Date of register",
             example = "2021-01-30T08:30:00Z", required = true)
      private Date date;
-
 }
