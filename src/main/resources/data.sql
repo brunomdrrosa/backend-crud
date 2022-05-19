@@ -1,7 +1,10 @@
 
-INSERT INTO db_properties(tenant, address, date) VALUES ('James Smith', '147 Country Haven Ct', '2022-03-11 08:00:00');
-INSERT INTO db_properties(tenant, address, date) VALUES ('John Smith', '147 Country Haven Ct', '2022-03-11 08:00:00');
-INSERT INTO db_properties(tenant, address, date) VALUES ('Maria Smith', '147 Country Haven Ct', '2022-03-11 08:00:00');
-INSERT INTO db_properties(tenant, address, date) VALUES ('Jo Smith', '147 Country Haven Ct', '2022-03-11 08:00:00');
-INSERT INTO db_properties(tenant, address, date) VALUES ('Ja Smith', '147 Country Haven Ct', '2022-03-11 08:00:00');
-INSERT INTO db_properties(tenant, address, date) VALUES ('Mes Smith', '147 Country Haven Ct', '2022-03-11 08:00:00');
+INSERT INTO db_properties(tenant, address, date) VALUES ('Jim Halpert', '1725 Slough Avenue in Scranton, PA.', '2022-03-11 08:00:00');
+INSERT INTO db_properties(tenant, address, date) VALUES ('Dwight Schrute', '1725 Slough Avenue in Scranton, PA.', '2022-03-11 08:00:00');
+INSERT INTO db_properties(tenant, address, date) VALUES ('Stanley Hudson', '1725 Slough Avenue in Scranton, PA.', '2022-03-11 08:00:00');
+INSERT INTO db_properties(tenant, address, date) VALUES ('Creed Bratton', '1725 Slough Avenue in Scranton, PA.', '2022-03-11 08:00:00');
+INSERT INTO db_properties(tenant, address, date) VALUES ('Kevin Malone', '1725 Slough Avenue in Scranton, PA.', '2022-03-11 08:00:00');
+INSERT INTO db_properties(tenant, address, date) VALUES ('Phyllis Smith', '1725 Slough Avenue in Scranton, PA.', '2022-03-11 08:00:00');
+INSERT INTO db_properties(tenant, address, date) VALUES ('Erin Hannon', '1725 Slough Avenue in Scranton, PA.', '2022-03-11 08:00:00');
+INSERT INTO db_properties(tenant, address, date) VALUES ('Toby Flenderson', '1725 Slough Avenue in Scranton, PA.', '2022-03-11 08:00:00');
+INSERT INTO db_properties(tenant, address, date) VALUES ('Michael Scott', '1725 Slough Avenue in Scranton, PA.', '2022-03-11 08:00:00');
