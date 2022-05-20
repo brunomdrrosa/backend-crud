@@ -1,10 +1,6 @@
 package com.crud.properties.repositories;
 
 import com.crud.properties.entities.Property;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-import java.util.Optional;
-
-public interface PropertyRepository extends JpaRepository<Property,Long> {
-
-}
+public interface PropertyRepository extends CrudRepository<Property, Long> {}
