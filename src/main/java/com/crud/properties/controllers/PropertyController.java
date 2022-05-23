@@ -27,14 +27,14 @@ public class PropertyController {
 		return service.findById(id);
 	}
 	
-	@GetMapping("/")
+	@GetMapping
 	@Operation(summary = "Get all the properties", description = "Get a list of all the %properties% registered in the system.")
 	@ApiResponse(responseCode = "200", description = "Successful Operation.")
 	public List<Property> getProperties() {
 		return service.findAll();
 	}
 	
-	@PostMapping("/")
+	@PostMapping
 	@Operation(summary = "Create a property", description = "Create a property.")
 	@ApiResponse(responseCode = "201", description = "Property created.")
 	public Property createProperty(@RequestBody Property property) {
